@@ -1,10 +1,13 @@
 name: SoulGraves
-version: '1.3.0'
+version: '1.3.1'
 main: dev.faultyfunctions.soulgraves.SoulGraves
 api-version: '1.20.6'
 prefix: SoulGraves
 authors: [FaultyFunctions, Catnies]
 description: A unique graves plugin where players collect their souls to retrieve their belongings
+libraries:
+  - com.zaxxer:HikariCP:5.1.0
+  - io.lettuce:lettuce-core:6.5.3.RELEASE
 commands:
   soulgraves:
     description: Main command for SoulGraves

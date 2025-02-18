@@ -8,6 +8,7 @@ import dev.dejvokep.boostedyaml.settings.loader.LoaderSettings
 import dev.dejvokep.boostedyaml.settings.updater.UpdaterSettings
 import dev.faultyfunctions.soulgraves.SoulGraves
 import org.bukkit.Bukkit
+import org.bukkit.Particle
 import java.io.File
 import java.io.IOException
 import kotlin.properties.Delegates
@@ -42,6 +43,16 @@ object ConfigManager {
 	val notifyOwnerBurstSound = SoundConfig()
 	val notifyOwnerPickupSound = SoundConfig()
 	lateinit var disabledWorlds: List<String>
+	// PARTICLES CONFIG
+	var enableParticles by Delegates.notNull<Boolean>()
+	var particlesFollowRadius by Delegates.notNull<Double>()
+	var particleType by Delegates.notNull<Particle>()
+	var particlesInitDistance by Delegates.notNull<Double>()
+	var particleSpeed by Delegates.notNull<Double>()
+	var particleSpeedBound by Delegates.notNull<Double>()
+	var particleMaxAmount by Delegates.notNull<Int>()
+	var particleOffsetBound by Delegates.notNull<Double>()
+
 
 	fun loadConfig() {
 		try {
@@ -115,5 +126,14 @@ object ConfigManager {
 			notifyOwnerPickupSound.pitches.add(split[2].toFloat())
 		}
 		disabledWorlds = config.getStringList("disabled-worlds")
+		// PARTICLES CONFIG
+		enableParticles = config.getBoolean("particles.enabled", true)
+		particlesFollowRadius = config.getDouble("particles.follow-radius", 50.0)
+		particleType = Particle.valueOf(config.getString("particles.particle.type", "soul_fire_flame")!!)
+		particlesInitDistance = config.getDouble("particles.particle.init-distance", 2.5)
+		particleSpeed = config.getDouble("particles.particle.speed", 0.005)
+		particleSpeedBound = config.getDouble("particles.particle.speed-bound", 0.005)
+		particleMaxAmount  = config.getInt("particles.particle.max-amount", 5)
+		particleOffsetBound = config.getDouble("particles.particle.offset-bound", 1.5)
 	}
 }

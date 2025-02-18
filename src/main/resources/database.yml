@@ -1,0 +1,24 @@
+# DO NOT EDIT file-version DIRECTLY
+file-version: 2
+
+# Change This File's Config, You Need Restart Server!!!
+
+# value: PDC, DATABASE
+# If you use DATABASE, you must set MySQL, Redis config.
+storage-mode: "PDC"
+
+# Server ID
+# Ensure that each server is unique when using MYSQL+REDIS storage
+# When data is generated, please do not modify it, which will cause the loss of old data
+server-name: "lobby"
+
+# Database For Cross-Server
+MySQL:
+  jdbc-url: "jdbc:mysql://mysql:3306/minecraft?useSSL=false&autoReconnect=true"
+  jdbc-class: "com.mysql.cj.jdbc.Driver"
+  properties:
+    user: "catnies"
+    password: "minato"
+
+Redis:
+  uri: "redis://redis:6379/0"

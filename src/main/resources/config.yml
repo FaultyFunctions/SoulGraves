@@ -1,5 +1,5 @@
 # DO NOT EDIT file-version DIRECTLY
-file-version: 1
+file-version: 3
 
 # If set true, players will require "soulgraves.spawn" permission to spawn a soul upon death
 permission-required: false
@@ -93,3 +93,15 @@ notify-owner-pickup-sound:
 #  - world_nether
 #  - world_the_end
 disabled-worlds: []
+
+# When Player Nearby own souls, plugin will show particles to lead to soul's location.
+particles:
+  enabled: true
+  follow-radius: 50
+  particle:
+    type: "soul_fire_flame"
+    init-distance: 2.5
+    speed: 0.005
+    speed-bound: 0.003
+    max-amount: 5
+    offset-bound: 1.5
