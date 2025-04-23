@@ -14,3 +14,7 @@ commands:
     description: Main command for SoulGraves
     usage: /soulgraves
     permission: soulgraves.command
+  back:
+    description: SoulGraves command to return back to player's soul
+    usage: /back
+    permission: soulgraves.back

@@ -1,5 +1,6 @@
 package dev.faultyfunctions.soulgraves
 
+import dev.faultyfunctions.soulgraves.commands.BackCommand
 import dev.faultyfunctions.soulgraves.commands.ReloadCommand
 import dev.faultyfunctions.soulgraves.compatibilities.ExcellentEnchantsHook
 import dev.faultyfunctions.soulgraves.compatibilities.VaneEnchantmentsHook
@@ -82,10 +83,12 @@ class SoulGraves : JavaPlugin() {
 		// COMMANDS
 		getCommand("soulgraves")?.setExecutor(ReloadCommand())
 		getCommand("soulgraves")?.tabCompleter = ReloadCommand()
+		getCommand("back")?.setExecutor(BackCommand())
+		getCommand("back")?.tabCompleter = BackCommand()
 
 		// SET UP BSTATS
 		val pluginId = 23436
-		val metrics = Metrics(this, pluginId)
+		Metrics(this, pluginId)
 
 		logger.info("Enabled!")
 	}
