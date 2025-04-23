@@ -52,7 +52,9 @@ class SoulPickupTask(val soul: Soul) : BukkitRunnable() {
 				// HANDLE XP
 				val owner: Player? = Bukkit.getPlayer(soul.ownerUUID)
 				val xpMultiplier = if (player.uniqueId == owner?.uniqueId) ConfigManager.xpPercentageOwner else ConfigManager.xpPercentageOthers
-				player.giveExp((soul.xp * xpMultiplier).toInt())
+				if (player.totalExperience != soul.xp) {
+					player.giveExp((soul.xp * xpMultiplier).toInt())
+				}
 
 				// PLAY SOUNDS
 				if (ConfigManager.pickupSound.enabled) {

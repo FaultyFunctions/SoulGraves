@@ -10,7 +10,6 @@ import dev.faultyfunctions.soulgraves.api.event.SoulSpawnEvent
 import dev.faultyfunctions.soulgraves.managers.MessageManager
 import dev.faultyfunctions.soulgraves.managers.STORAGE_MODE
 import dev.faultyfunctions.soulgraves.managers.StorageType
-import dev.faultyfunctions.soulgraves.utils.SpigotCompatUtils
 import org.bukkit.*
 import org.bukkit.block.Block
 import org.bukkit.entity.Entity
@@ -55,7 +54,7 @@ class PlayerDeathListener() : Listener {
 				inventory.add(null) // This is to make sure we keep the same item slot index when we restore items later
 			}
 		}
-		val xp: Int = SpigotCompatUtils.calculateTotalExperiencePoints(player.level)
+		val xp: Int = player.totalExperience
 
 		// TIME
 		val deathTime = System.currentTimeMillis()
@@ -94,7 +93,7 @@ class PlayerDeathListener() : Listener {
 		var block: Block = safeLocation.block
 
 		// CHECK IF ABOVE THE MAX HEIGHT!!!
-		val environment = locationToCheck.world!!.getEnvironment()
+		val environment = locationToCheck.world!!.environment
 		while (block.type.isSolid || block.isLiquid || block.type == Material.VOID_AIR) {
 			// NETHER
 			if (environment == World.Environment.NETHER) {
