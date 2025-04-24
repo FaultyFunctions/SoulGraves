@@ -10,6 +10,7 @@ import dev.faultyfunctions.soulgraves.api.event.SoulSpawnEvent
 import dev.faultyfunctions.soulgraves.managers.MessageManager
 import dev.faultyfunctions.soulgraves.managers.STORAGE_MODE
 import dev.faultyfunctions.soulgraves.managers.StorageType
+import dev.faultyfunctions.soulgraves.utils.SpigotCompatUtils
 import org.bukkit.*
 import org.bukkit.block.Block
 import org.bukkit.entity.Entity
@@ -54,7 +55,7 @@ class PlayerDeathListener() : Listener {
 				inventory.add(null) // This is to make sure we keep the same item slot index when we restore items later
 			}
 		}
-		val xp: Int = player.totalExperience
+		val xp: Int = SpigotCompatUtils.calculateTotalExperiencePoints(player.level)
 
 		// TIME
 		val deathTime = System.currentTimeMillis()

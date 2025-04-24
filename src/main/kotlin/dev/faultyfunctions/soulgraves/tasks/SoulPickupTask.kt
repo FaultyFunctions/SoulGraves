@@ -8,6 +8,7 @@ import dev.faultyfunctions.soulgraves.database.RedisPacket
 import dev.faultyfunctions.soulgraves.managers.*
 import dev.faultyfunctions.soulgraves.utils.Soul
 import dev.faultyfunctions.soulgraves.utils.SoulState
+import dev.faultyfunctions.soulgraves.utils.SpigotCompatUtils
 import org.bukkit.Bukkit
 import org.bukkit.GameMode
 import org.bukkit.Particle
@@ -52,7 +53,7 @@ class SoulPickupTask(val soul: Soul) : BukkitRunnable() {
 				// HANDLE XP
 				val owner: Player? = Bukkit.getPlayer(soul.ownerUUID)
 				val xpMultiplier = if (player.uniqueId == owner?.uniqueId) ConfigManager.xpPercentageOwner else ConfigManager.xpPercentageOthers
-				if (player.totalExperience != soul.xp) {
+				if (SpigotCompatUtils.calculateTotalExperiencePoints(player.level) != soul.xp) {
 					player.giveExp((soul.xp * xpMultiplier).toInt())
 				}
 
