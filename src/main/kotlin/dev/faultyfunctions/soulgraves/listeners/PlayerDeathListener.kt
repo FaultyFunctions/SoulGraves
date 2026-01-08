@@ -98,6 +98,18 @@ class PlayerDeathListener : Listener {
 
 	private fun spawnSoulNextTick(deathInfo: DeathInfo, storeInventory: Boolean, storeXP: Boolean) {
 		Bukkit.getScheduler().runTask(SoulGraves.plugin, Runnable {
+			val safeLocation: Location = findSafeLocation(deathInfo.location.clone())
+			val isDuplicateSoul = SoulGraves.soulList.any { soul ->
+				soul.ownerUUID == deathInfo.player.uniqueId &&
+				soul.location.world == safeLocation.world &&
+				soul.location.distanceSquared(safeLocation) < 0.01 &&
+				(System.currentTimeMillis() - soul.deathTime) < 10000
+			}
+
+			if (isDuplicateSoul) {
+				return@Runnable
+			}
+
 			val soulInventory: MutableList<ItemStack?> = mutableListOf()
 
 			if (storeInventory) {
@@ -121,7 +133,6 @@ class PlayerDeathListener : Listener {
 			val expireTime = deathTime + ((ConfigManager.timeStable + ConfigManager.timeUnstable) * 1000)
 
 			// SPAWN & DEFINE ENTITY
-			val safeLocation: Location = findSafeLocation(deathInfo.location.clone())
 			val marker: Entity = deathInfo.location.world?.spawnEntity(safeLocation, EntityType.MARKER) ?: return@Runnable
 			marker.isPersistent = true
 			marker.isSilent = true
