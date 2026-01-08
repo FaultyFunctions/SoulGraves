@@ -1,11 +1,12 @@
 name: SoulGraves
 version: '1.5.1'
 main: dev.faultyfunctions.soulgraves.SoulGraves
-api-version: '1.20.6'
+api-version: '1.21'
 prefix: SoulGraves
 authors: [FaultyFunctions, Catnies, ShiroKazane]
 description: A unique graves plugin where players collect their souls to retrieve their belongings
 libraries:
-  - com.zaxxer:HikariCP:5.1.0
+  - org.jetbrains.kotlin:kotlin-stdlib:2.3.0
+  - com.zaxxer:HikariCP:7.0.2
   - io.lettuce:lettuce-core:6.7.1.RELEASE
 softdepend: [WorldGuard, vane-enchantments, ExcellentEnchants, EcoEnchants, Vault, VaultUnlocked]
