@@ -13,7 +13,7 @@
 
 	<properties>
 		<java.version>21</java.version>
-		<kotlin.version>2.0.20</kotlin.version>
+		<kotlin.version>2.1.0</kotlin.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<beta.version>00</beta.version>
 	</properties>
@@ -138,7 +138,7 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>1.20.6-R0.1-SNAPSHOT</version>
+			<version>26.2-R0.1-SNAPSHOT</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -175,12 +175,12 @@
 		<dependency>
 			<groupId>io.github.revxrsal</groupId>
 			<artifactId>lamp.common</artifactId>
-			<version>4.0.0-rc.12</version>
+			<version>4.0.0-rc.18</version>
 		</dependency>
 		<dependency>
 			<groupId>io.github.revxrsal</groupId>
 			<artifactId>lamp.bukkit</artifactId>
-			<version>4.0.0-rc.12</version>
+			<version>4.0.0-rc.18</version>
 		</dependency>
 		<!-- Bukkit Lib -->
 		<dependency>
