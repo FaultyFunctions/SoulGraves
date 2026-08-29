@@ -69,27 +69,31 @@
 						</filter>
 					</filters>
 					<relocations>
-						<relocation>
-							<pattern>com.jeff_media.morepersistentdatatypes</pattern>
-							<shadedPattern>dev.faultyfunctions.soulgraves.libs.morepersistentdatatypes</shadedPattern>
-						</relocation>
-						<relocation>
-							<pattern>org.bstats</pattern>
-							<shadedPattern>dev.faultyfunctions.soulgraves.libs.bstats</shadedPattern>
-						</relocation>
-						<relocation>
-							<pattern>dev.dejvokep.boostedyaml</pattern>
-							<shadedPattern>dev.faultyfunctions.soulgraves.libs.boostedyaml</shadedPattern>
-						</relocation>
-						<relocation>
-							<pattern>com.saicone.rtag</pattern>
-							<shadedPattern>dev.faultyfunctions.soulgraves.libs.rtag</shadedPattern>
-						</relocation>
-						<relocation>
-							<pattern>revxrsal.commands</pattern>
-							<shadedPattern>dev.faultyfunctions.soulgraves.libs.lamp</shadedPattern>
-						</relocation>
-					</relocations>
+                        <relocation>
+                            <pattern>com.jeff_media.morepersistentdatatypes</pattern>
+                            <shadedPattern>dev.faultyfunctions.soulgraves.libs.morepersistentdatatypes</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>org.bstats</pattern>
+                            <shadedPattern>dev.faultyfunctions.soulgraves.libs.bstats</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>dev.dejvokep.boostedyaml</pattern>
+                            <shadedPattern>dev.faultyfunctions.soulgraves.libs.boostedyaml</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>com.saicone.rtag</pattern>
+                            <shadedPattern>dev.faultyfunctions.soulgraves.libs.rtag</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>revxrsal.commands</pattern>
+                            <shadedPattern>dev.faultyfunctions.soulgraves.libs.lamp</shadedPattern>
+                        </relocation>
+                        <relocation>
+                            <pattern>net.kyori</pattern>
+                            <shadedPattern>dev.faultyfunctions.soulgraves.libs.kyori</shadedPattern>
+                        </relocation>
+                    </relocations>
 				</configuration>
 			</plugin>
 			<plugin>
